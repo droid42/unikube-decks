@@ -1,0 +1,16 @@
+---
+loki-stack:
+  loki:
+    enabled: true
+    persistence:
+      enabled: true
+      storageClassName: default
+      size: 5Gi
+    # temporary workaround https://github.com/grafana/loki/issues/2018
+    securityContext:
+      runAsGroup: 0
+      runAsNonRoot: false
+      runAsUser: 0
+
+  promtail:
+    enabled: true
